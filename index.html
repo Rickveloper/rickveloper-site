@@ -3,45 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rickveloper</title>
+  <title>Rickveloper | Web Development Services</title>
+  <meta name="description" content="Modern, fast, and maintainable websites built for real businesses. Custom builds and prebuilt options available." />
 
-  <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Icons -->
-  <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
   />
+
+  <script>
+    (function() {
+      var stored = null;
+      try { stored = localStorage.getItem("rickveloper-theme"); } catch (e) {}
+      var theme = stored || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="nav">
   <div class="nav__container">
-    <div class="logo">Rickveloper</div>
+    <a href="#" class="logo" aria-label="Rickveloper home">Rickveloper</a>
 
-    <nav class="nav__links" id="navLinks">
+    <nav class="nav__links" id="navLinks" aria-label="Main navigation">
       <a href="#services">Services</a>
       <a href="#how">How It Works</a>
+      <a href="#pricing">Pricing</a>
       <a href="#contact">Contact</a>
     </nav>
 
-    <button class="nav__toggle" id="navToggle" aria-label="Menu">
-      <i class="fas fa-bars"></i>
-    </button>
+    <div class="nav__actions">
+      <button
+        class="theme-toggle"
+        id="themeToggle"
+        type="button"
+        aria-label="Switch to dark mode"
+      >
+        <ion-icon name="moon-outline" class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true"></ion-icon>
+        <ion-icon name="sunny-outline" class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true"></ion-icon>
+      </button>
+
+      <button
+        class="nav__toggle"
+        id="navToggle"
+        type="button"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+    </div>
   </div>
 </header>
 
-<main class="container fade-in">
+<main id="main-content" class="container fade-in">
 
-  <!-- HERO -->
-  <section class="hero">
+  <section class="hero" aria-labelledby="hero-heading">
     <span class="pill pill--green">
-      CUSTOM WEBSITES • PREBUILT SITES • DEPLOYMENT
+      CUSTOM WEBSITES &bull; PREBUILT SITES &bull; DEPLOYMENT
     </span>
 
-    <h1>
+    <h1 id="hero-heading">
       Websites Built to Perform,<br />
       Not Just Exist
     </h1>
@@ -51,12 +82,12 @@
     </p>
   </section>
 
-  <!-- SERVICES -->
-  <section id="services" class="cards">
+  <section id="services" class="cards" aria-labelledby="services-heading">
+    <h2 class="visually-hidden" id="services-heading">Our Services</h2>
 
-    <div class="card card--green lift">
+    <article class="card card--green lift">
       <span class="pill pill--light">CUSTOM BUILD</span>
-      <h2>Bespoke Websites</h2>
+      <h3>Bespoke Websites</h3>
       <p>
         End-to-end website production tailored to your business.
         Design, development, deployment, and ongoing support — handled.
@@ -67,11 +98,11 @@
       >
         Request a Build
       </a>
-    </div>
+    </article>
 
-    <div class="card card--orange lift">
+    <article class="card card--orange lift">
       <span class="pill pill--light">READY TO LAUNCH</span>
-      <h2>Prebuilt Websites</h2>
+      <h3>Prebuilt Websites</h3>
       <p>
         Professionally designed websites that can be customized and deployed quickly.
         Ideal for businesses that want to move fast.
@@ -80,44 +111,100 @@
         class="btn btn--secondary"
         href="https://rickveloper-client-sites.vercel.app"
         target="_blank"
+        rel="noopener noreferrer"
       >
         View Available Sites
+        <span class="visually-hidden">(opens in new tab)</span>
       </a>
-    </div>
-
+    </article>
   </section>
 
-  <!-- HOW IT WORKS -->
-  <section id="how" class="how-it-works fade-in-delayed">
+  <section id="how" class="how-it-works fade-in-delayed" aria-labelledby="how-heading">
     <span class="pill pill--green">HOW IT WORKS</span>
+    <h2 class="visually-hidden" id="how-heading">How It Works</h2>
 
     <div class="steps">
       <div class="step">
-        <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+        <ion-icon name="chatbubble-ellipses-outline" aria-hidden="true"></ion-icon>
         <h3>1. Discovery</h3>
         <p>We define goals, scope, and requirements.</p>
       </div>
 
       <div class="step">
-        <ion-icon name="code-slash-outline"></ion-icon>
-        <h3>2. Build & Deploy</h3>
+        <ion-icon name="code-slash-outline" aria-hidden="true"></ion-icon>
+        <h3>2. Build &amp; Deploy</h3>
         <p>Your site is built and deployed using modern tooling.</p>
       </div>
 
       <div class="step">
-        <ion-icon name="rocket-outline"></ion-icon>
-        <h3>3. Launch & Support</h3>
+        <ion-icon name="rocket-outline" aria-hidden="true"></ion-icon>
+        <h3>3. Launch &amp; Support</h3>
         <p>Final tweaks, launch, and continued support.</p>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="contact fade-in-delayed">
+  <section id="pricing" class="pricing fade-in-delayed" aria-labelledby="pricing-heading">
+    <span class="pill pill--green">PRICING</span>
+    <h2 id="pricing-heading">Flexible Pricing</h2>
+    <p class="pricing__intro">
+      Every project is scoped individually. Let's discuss your needs and find an approach that works for your budget.
+    </p>
+
+    <div class="pricing__grid">
+      <article class="pricing-card">
+        <div class="pricing-card__header">
+          <h3 class="pricing-card__title">Custom Websites</h3>
+          <div class="pricing-card__price">Custom Quote</div>
+        </div>
+        <ul class="pricing-card__features">
+          <li>Full design and development</li>
+          <li>Responsive, mobile-first build</li>
+          <li>Performance optimization</li>
+          <li>Deployment and hosting setup</li>
+          <li>30-day post-launch support</li>
+        </ul>
+        <a class="btn btn--outline" href="mailto:rickveloper@proton.me?subject=Custom%20Website%20Inquiry">
+          Start a Conversation
+        </a>
+        <p class="pricing-card__note">
+          Pricing tailored to your project's scope and timeline.
+        </p>
+      </article>
+
+      <article class="pricing-card">
+        <div class="pricing-card__header">
+          <h3 class="pricing-card__title">Prebuilt Websites</h3>
+          <div class="pricing-card__price">Affordable Options</div>
+        </div>
+        <ul class="pricing-card__features">
+          <li>Professionally designed templates</li>
+          <li>Content and branding customization</li>
+          <li>Domain and hosting guidance</li>
+          <li>Quick turnaround (1–2 weeks)</li>
+          <li>14-day post-launch support</li>
+        </ul>
+        <a
+          class="btn btn--outline"
+          href="https://rickveloper-client-sites.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Browse Templates
+          <span class="visually-hidden">(opens in new tab)</span>
+        </a>
+        <p class="pricing-card__note">
+          Ideal for startups, freelancers, and small businesses.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact" class="contact fade-in-delayed" aria-labelledby="contact-heading">
     <span class="pill pill--green">CONTACT</span>
+    <h2 class="visually-hidden" id="contact-heading">Contact Us</h2>
     <p>
-      Interested in a custom website or a prebuilt option?
-      Let’s talk.
+      Interested in a custom website or a prebuilt option? Let's talk.
     </p>
     <p>
       <strong>Email:</strong>
@@ -126,6 +213,53 @@
   </section>
 
 </main>
+
+<!-- Chatbot Assistant -->
+<div class="chatbot" id="chatbot" aria-labelledby="chatbot-heading">
+  <button
+    class="chatbot__trigger"
+    id="chatbotTrigger"
+    type="button"
+    aria-label="Open assistant"
+    aria-expanded="false"
+    aria-controls="chatbotPanel"
+  >
+    <ion-icon name="chatbubbles-outline" aria-hidden="true"></ion-icon>
+  </button>
+
+  <div class="chatbot__panel" id="chatbotPanel" role="dialog" aria-modal="true" aria-labelledby="chatbot-heading" hidden>
+    <div class="chatbot__header">
+      <h2 class="chatbot__title" id="chatbot-heading">Assistant</h2>
+      <button
+        class="chatbot__close"
+        id="chatbotClose"
+        type="button"
+        aria-label="Close assistant"
+      >
+        <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+      </button>
+    </div>
+
+    <div class="chatbot__body">
+      <p class="chatbot__greeting">Hi, I'm Rickveloper's assistant. How can I help?</p>
+
+      <div class="chatbot__options" role="menu">
+        <button class="chatbot__option" type="button" role="menuitem" data-action="scroll" data-target="services">
+          Custom Website
+        </button>
+        <button class="chatbot__option" type="button" role="menuitem" data-action="scroll" data-target="services">
+          Prebuilt Website
+        </button>
+        <button class="chatbot__option" type="button" role="menuitem" data-action="scroll" data-target="pricing">
+          Pricing
+        </button>
+        <button class="chatbot__option" type="button" role="menuitem" data-action="email">
+          Contact
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
