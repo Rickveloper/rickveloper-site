@@ -44,8 +44,15 @@ body {
 h1 {
   font-size: 2.75rem;
   line-height: 1.05;
-  margin: 1.25rem 0 3rem;
+  margin: 1.25rem 0 1.25rem;
   letter-spacing: -0.02em;
+}
+
+.subtext {
+  max-width: 46ch;
+  font-size: 1.05rem;
+  opacity: 0.85;
+  margin-bottom: 3rem;
 }
 
 /* ---------------- CARDS ---------------- */
@@ -72,7 +79,7 @@ h1 {
 
 .card p {
   opacity: 0.95;
-  max-width: 36ch;
+  max-width: 38ch;
 }
 
 /* ---------------- GRADIENTS ---------------- */
