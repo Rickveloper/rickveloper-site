@@ -4,59 +4,80 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rickveloper</title>
+
+  <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
 </head>
 <body>
 
 <header class="nav">
-  <div class="logo">Rickveloper</div>
-  <a class="nav-btn" href="#contact">Get in Touch</a>
+  <div class="nav__container">
+    <div class="logo">Rickveloper</div>
+
+    <nav class="nav__links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#how">How It Works</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="nav__toggle" id="navToggle" aria-label="Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
 </header>
 
 <main class="container fade-in">
 
-  <span class="pill green">
-    CUSTOM WEBSITES • PREBUILT SITES • DEPLOYMENT
-  </span>
+  <!-- HERO -->
+  <section class="hero">
+    <span class="pill pill--green">
+      CUSTOM WEBSITES • PREBUILT SITES • DEPLOYMENT
+    </span>
 
-  <h1>
-    Websites Built to Perform,<br />
-    Not Just Exist
-  </h1>
+    <h1>
+      Websites Built to Perform,<br />
+      Not Just Exist
+    </h1>
 
-  <p class="subtext">
-    Modern, fast, and maintainable websites built for real businesses.
-  </p>
+    <p class="subtext">
+      Modern, fast, and maintainable websites built for real businesses.
+    </p>
+  </section>
 
   <!-- SERVICES -->
-  <section class="cards">
+  <section id="services" class="cards">
 
-    <!-- CUSTOM BUILD -->
-    <div class="card green lift">
-      <span class="pill light">CUSTOM BUILD</span>
+    <div class="card card--green lift">
+      <span class="pill pill--light">CUSTOM BUILD</span>
       <h2>Bespoke Websites</h2>
       <p>
         End-to-end website production tailored to your business.
         Design, development, deployment, and ongoing support — handled.
       </p>
       <a
-        class="btn primary"
+        class="btn btn--primary"
         href="mailto:rickveloper@proton.me?subject=Website%20Build%20Inquiry"
       >
         Request a Build
       </a>
     </div>
 
-    <!-- PREBUILT -->
-    <div class="card orange lift">
-      <span class="pill light">READY TO LAUNCH</span>
+    <div class="card card--orange lift">
+      <span class="pill pill--light">READY TO LAUNCH</span>
       <h2>Prebuilt Websites</h2>
       <p>
         Professionally designed websites that can be customized and deployed quickly.
         Ideal for businesses that want to move fast.
       </p>
       <a
-        class="btn secondary"
+        class="btn btn--secondary"
         href="https://rickveloper-client-sites.vercel.app"
         target="_blank"
       >
@@ -67,54 +88,45 @@
   </section>
 
   <!-- HOW IT WORKS -->
-  <section class="how-it-works fade-in-delayed">
-    <span class="pill green">HOW IT WORKS</span>
+  <section id="how" class="how-it-works fade-in-delayed">
+    <span class="pill pill--green">HOW IT WORKS</span>
 
     <div class="steps">
-
       <div class="step">
+        <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
         <h3>1. Discovery</h3>
-        <p>
-          We start with a short conversation to understand your goals,
-          audience, and requirements.
-        </p>
+        <p>We define goals, scope, and requirements.</p>
       </div>
 
       <div class="step">
+        <ion-icon name="code-slash-outline"></ion-icon>
         <h3>2. Build & Deploy</h3>
-        <p>
-          Your website is designed, developed, and deployed using modern,
-          reliable tooling.
-        </p>
+        <p>Your site is built and deployed using modern tooling.</p>
       </div>
 
       <div class="step">
+        <ion-icon name="rocket-outline"></ion-icon>
         <h3>3. Launch & Support</h3>
-        <p>
-          Once live, we handle final adjustments and provide ongoing
-          support as needed.
-        </p>
+        <p>Final tweaks, launch, and continued support.</p>
       </div>
-
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact" class="contact fade-in-delayed">
-    <span class="pill green">CONTACT</span>
+    <span class="pill pill--green">CONTACT</span>
     <p>
       Interested in a custom website or a prebuilt option?
-      Reach out to discuss scope, pricing, and timelines.
+      Let’s talk.
     </p>
     <p>
       <strong>Email:</strong>
-      <a href="mailto:rickveloper@proton.me">
-        rickveloper@proton.me
-      </a>
+      <a href="mailto:rickveloper@proton.me">rickveloper@proton.me</a>
     </p>
   </section>
 
 </main>
 
+<script src="script.js"></script>
 </body>
 </html>
