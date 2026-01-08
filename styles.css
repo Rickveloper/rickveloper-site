@@ -40,6 +40,7 @@
 /* ---------------- BASE ---------------- */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
@@ -112,13 +113,15 @@ a {
 }
 
 .logo {
-  font-weight: 700;
-  font-size: 1.2rem;
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
   padding: 0.5rem 0;
   min-height: 44px;
   display: flex;
   align-items: center;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease, color 0.3s ease;
 }
 
 .logo:hover {
@@ -505,7 +508,7 @@ h3 {
   border-radius: 22px;
   background: var(--color-bg-elevated);
   border: 2px solid var(--color-border);
-  text-align: left;
+  text-align: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, var(--transition-theme);
 }
 
@@ -539,6 +542,8 @@ h3 {
 .pricing-card__features {
   list-style: none;
   margin-bottom: 1.5rem;
+  display: inline-block;
+  text-align: left;
 }
 
 .pricing-card__features li {

@@ -98,7 +98,6 @@
     }
   });
 
-  // Chatbot functionality
   var chatbotTrigger = document.getElementById("chatbotTrigger");
   var chatbotPanel = document.getElementById("chatbotPanel");
   var chatbotClose = document.getElementById("chatbotClose");
